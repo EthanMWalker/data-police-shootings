@@ -1,22 +1,22 @@
 # Fatal Force
 
-The Washington Post is [compiling a database of every fatal shooting](https://www.washingtonpost.com/graphics/investigations/police-shootings-database/) in the United States by a police officer in the line of duty since Jan. 1, 2015.
+The Washington Post's database contains records of every fatal shooting in the United States by a police officer in the line of duty since Jan. 1, 2015.
 
-Download the data: https://raw.githubusercontent.com/washingtonpost/data-police-shootings/master/fatal-police-shootings-data.csv
+*\[[Download the data](https://github.com/washingtonpost/data-police-shootings/releases/download/v0.1/fatal-police-shootings-data.csv)\]*
 
-[In 2015](https://www.washingtonpost.com/graphics/national/police-shootings/), The Post began tracking more than a dozen details about each killing — including the race of the deceased, the circumstances of the shooting, whether the person was armed and whether the victim was experiencing a mental-health crisis — by culling local news reports, law enforcement websites and social media and by monitoring independent databases such as Killed by Police and Fatal Encounters. The Post conducted additional reporting in many cases.
+In 2015, The Post began tracking more than a dozen details about each killing — including the race of the deceased, the circumstances of the shooting, whether the person was armed and whether the person was experiencing a mental-health crisis — by culling local news reports, law enforcement websites and social media, and by monitoring independent databases such as Killed by Police and Fatal Encounters. The Post conducted additional reporting in many cases.
 
-In 2016, The Post is gathering additional information about each fatal shooting that occurs this year and is filing open-records requests with departments. More than a dozen additional details are being collected about officers in each shooting.
+*\[[Explore the interactive database](https://www.washingtonpost.com/graphics/investigations/police-shootings-database/)\]*
 
-The Post is documenting only those shootings in which a police officer, in the line of duty, shot and killed a civilian — the circumstances that most closely parallel the 2014 killing of Michael Brown in Ferguson, Mo., which began the protest movement culminating in Black Lives Matter and an increased focus on police accountability nationwide. The Post is not tracking deaths of people in police custody, fatal shootings by off-duty officers or non-shooting deaths.
+The Post is documenting only those shootings in which a police officer, in the line of duty, shoots and kills a civilian — the circumstances that most closely parallel the 2014 killing of Michael Brown in Ferguson, Mo., which began the protest movement culminating in Black Lives Matter and an increased focus on police accountability nationwide. The Post is not tracking deaths of people in police custody, fatal shootings by off-duty officers or non-shooting deaths.
 
-The FBI and the Centers for Disease Control and Prevention log fatal shootings by police, but officials acknowledge that their data is incomplete. In 2015, The Post documented more than two times more fatal shootings by police than had been recorded by the FBI. Last year, the FBI announced plans to overhaul how it tracks fatal police encounters.
+The FBI and the Centers for Disease Control and Prevention log fatal shootings by police, but officials acknowledge that their data is incomplete. Since 2015, The Post has documented more than twice as many fatal shootings by police as recorded on average annually.
 
-[The Post’s database](https://www.washingtonpost.com/graphics/investigations/police-shootings-database/) is updated regularly as fatal shootings are reported and as facts emerge about individual cases. The Post is seeking assistance in making the database as comprehensive as possible. To provide information about fatal police shootings since Jan. 1, 2015, send us an email at policeshootingsfeedback@washpost.com. The Post is also interested in obtaining photos of the deceased and original videos of fatal encounters with police.
+The Post’s database is updated regularly as fatal shootings are reported and as facts emerge about individual cases. The Post seeks to make the database as comprehensive as possible. To provide information about fatal police shootings since Jan. 1, 2015, send us an email at [policeshootingsfeedback@washpost.com](mailto:policeshootingsfeedback@washpost.com).
 
 ## About the data
 
-The file `fatal-police-shootings-data.csv` contains data about each fatal shooting in CSV format. The file can be [downloaded at this URL](https://raw.githubusercontent.com/washingtonpost/data-police-shootings/master/fatal-police-shootings-data.csv). Each row has the following variables:
+The file `fatal-police-shootings-data.csv` contains data about each fatal shooting in CSV format. The file can be [downloaded at this URL](https://github.com/washingtonpost/data-police-shootings/releases/download/v0.1/fatal-police-shootings-data.csv). Each row has the following variables:
 
 `id`: a unique identifier for each victim
 
@@ -28,14 +28,14 @@ The file `fatal-police-shootings-data.csv` contains data about each fatal shooti
 - `shot`
 - `shot and Tasered`
 
-`armed`: dndicates that the victim was armed with some sort of implement that a police officer believed could inflict harm
+`armed`: indicates that the victim was armed with some sort of implement that a police officer believed could inflict harm
 - `undetermined`: it is not known whether or not the victim had a weapon
 - `unknown`: the victim was armed, but it is not known what the object was
 - `unarmed`: the victim was not armed
 
 `age`: the age of the victim
 
-`gender`:
+`gender`: the gender of the victim. The Post identifies victims by the gender they identify with if reports indicate that it differs from their biological sex.
 - `M`: Male
 - `F`: Female
 - `None`: unknown
@@ -49,7 +49,7 @@ The file `fatal-police-shootings-data.csv` contains data about each fatal shooti
 - `O`: Other
 - `None`: unknown
 
-`city`: the municipality where the fatal shooting took place. Note that in some cases this field may contain a county name where a more specific municipality is unavailable or unknown.
+`city`: the municipality where the fatal shooting took place. Note that in some cases this field may contain a county name if a more specific municipality is unavailable or unknown.
 
 `state`: two-letter postal code abbreviation
 
@@ -66,9 +66,13 @@ The threat column and the fleeing column are not necessarily related. For exampl
 
 `body_camera`: News reports have indicated an officer was wearing a body camera and it may have recorded some portion of the incident.
 
+`latitude` and `longitude`: the location of the shooting expressed as WGS84 coordinates, geocoded from addresses. The coordinates are rounded to 3 decimal places, meaning they have a precision of about 80-100 meters within the contiguous U.S.
+
+`is_geocoding_exact`: reflects the accuracy of the coordinates. `true` means that the coordinates are for the location of the shooting (within approximately 100 meters), while `false` means that coordinates are for the centroid of a larger region, such as the city or county where the shooting happened.
+
 ## Contributing
 
-We welcome assistance in making the our data as complete and accurate as possible. The best way to contribute is to email policeshootingsfeedback@washpost.com. Please note that we do not accept pull requests as the data file is generated downstream of our internal database.
+We welcome assistance in making the our data as complete and accurate as possible. The best way to contribute to the data, make suggestions or provide information about fatal police shootings since Jan. 1, 2015, is to send us an email at [policeshootingsfeedback@washpost.com](mailto:policeshootingsfeedback@washpost.com). Please note that we do not accept pull requests as the data file is generated downstream of our internal database.
 
 ## Licensing
 
@@ -76,7 +80,7 @@ The data is published under an [Attribution-NonCommercial-ShareAlike 4.0 Interna
 
 ## Contact
 
-Contact policeshootingsfeedback@washpost.com with any questions about the data, feedback, updated information or corrections.
+Contact [policeshootingsfeedback@washpost.com](mailto:policeshootingsfeedback@washpost.com) with any questions about the data, feedback, updated information or corrections.
 
 ## Credits
 
